@@ -27,4 +27,9 @@ uv init
 uv add -r requirements.txt
 pre-commit install
 python get_spec.py
+:: Patch to make sure pip is installed in the venv
+python -m ensurepip --default-pip
+:: Deactivate venv to ensure pip install and reactivate
+deactivate
+CALL .venv/scripts/activate
 PAUSE
